@@ -1,0 +1,28 @@
+version: '3'
+services:
+  node_app:
+    build: .
+    ports:
+     - "3005:3005"
+    environment:
+      PORT: 3005
+    depends_on:
+      - mysql
+    networks:
+      - my_network
+
+  mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: docker-nodejs-tutorial
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - my_network
+  
+networks:
+  my_network:
+    driver: bridge

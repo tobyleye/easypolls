@@ -1,0 +1,19 @@
+input {
+  @apply border-2 border-gray-200 px-4 py-2 rounded-lg;
+}
+
+textarea {
+  @apply border-2 border-gray-200 px-4 py-2 rounded-lg;
+}
+
+.button {
+  @apply h-10 px-6 rounded-lg;
+}
+
+nav a {
+  @apply text-purple-500 underline;
+}
+
+.poll-option {
+  @apply bg-current;
+}
